@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar una compra</title>
+  <link rel="stylesheet" href="estilosform.css">
+</head>
+<body>
+  <h1>Registrar una compra</h1>
+  <form id="formulario" action="/guardar_compra" method="POST" onsubmit="validarFormulario(event)">
+    <label for="nombre">Nombre del Insumo:</label>
+    <input type="text" id="nombre" required>
+    <br>
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" required>
+    <br>
+    <label for="monto">Monto:</label>
+    <input type="number" id="monto" required>
+    <br>
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" id="cantidad" required>
+    <br>
+    <label for="medida">Medida (cm):</label>
+    <input type="number" id="medida" required>
+    <br>
+    <label for="recibo">Recibo:</label>
+    <input type="text" id="recibo" required>
+    <br>
+    <label for="iva">IVA:</label>
+    <input type="number" id="iva" required>
+    <br>
+    <label for="proveedor">Proveedor:</label>
+    <select id="proveedor" required>
+      <option value="">Seleccione un proveedor</option>
+      <option value="distribuidora_sas">Distribuidora SAS</option>
+      <option value="barahclothes">BarahClothes</option>
+      <option value="zara">Zara</option>
+    </select>
+    <br>
+    <label for="total">Total:</label>
+    <input type="number" id="total" required>
+    <br>
+    <label for="foto">Recibo de compra:</label>
+    <input type="file" id="foto" accept="image/*">
+    <br>
+    <input type="submit" value="Guardar">
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre del insumo</th>
+        <th scope="col">Monto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">IVA</th>
+        <th scope="col">Acción</th> <!-- Nueva columna para eliminar -->
+      </tr>
+    </thead>
+    <tbody id="tabla-datos">
+      <!-- Filas de datos se agregarán aquí -->
+    </tbody>
+  </table>
+  <script src="funciones.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
